@@ -135,6 +135,7 @@
     </style>
 </head>
 <body>
+    <!-- Decorative SVGs and icons removed -->
     <div class="top-bar">
         <div id="today-date"></div>
         <button class="menu-btn" id="menuBtn" title="Past Trials">
@@ -277,8 +278,19 @@
             sidebar.classList.add('open');
         };
     </script>
-    <a href="https://chat.openai.com/" target="_blank" id="chatgptLogo" style="position: fixed; right: 18px; bottom: 18px; z-index: 9999;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="width:40px;height:40px;opacity:0.85;cursor:pointer;" />
+    <!-- Floating ChatGPT logo -->
+    <a href="https://chat.openai.com/" target="_blank" id="chatgptLogo" style="position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 9999; animation: floatLogo 3.5s ease-in-out infinite;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="width:56px;height:56px;opacity:0.92;cursor:pointer;box-shadow:0 2px 16px rgba(60,180,120,0.18);border-radius:50%;background:#fff;" />
     </a>
+    <style>
+        @keyframes floatLogo {
+            0%   { transform: translate(-50%, -50%) translateY(0); }
+            50%  { transform: translate(-50%, -50%) translateY(-18px); }
+            100% { transform: translate(-50%, -50%) translateY(0); }
+        }
+        #chatgptLogo {
+            pointer-events: auto;
+        }
+    </style>
 </body>
 </html>
